@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "My Home Info App";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+    <div class="col-md-4 col-lg-10 .d-md-flex p-2">
+        <input type="submit" class="btn btn-block form-check-inline btn-dark" name="answer" value="Find homes near you" formaction=@Url.Action("GetHouseListByDistance") formmethod="post" />
+    
+        <input type="submit" class="btn btn-block form-check-inline btn-dark" name="answer" value="Find your space" formaction=@Url.Action("GetHouseListByRoomCount") formmethod="post" />
+    
+        <input type="submit" class="btn btn-block form-check-inline btn-dark" name="answer" value="Find your location" formaction=@Url.Action("GetHouseListByLimitedData") formmethod="post" />
+    
+        <input type="submit" class="btn btn-block form-check-inline btn-dark" name="answer" value="Find Your Ideal House" formaction=@Url.Action("GetIdealHouse") formmethod="post" />
+    </div>
+ }
+
+

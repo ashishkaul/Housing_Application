@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Housing_Application.Model.House>
+@{
+    ViewBag.Title = "House Info";
+}
+
+<h2>House Info</h2>
+
+@{
+    if (ViewBag.filteredData != null)
+    {
+        foreach (var item in ViewBag.filteredData)
+        {
+            <li>
+                @item.StreetName;
+            </li>
+        }
+    }
+    else if(ViewBag.idealHouse != null)
+    {
+        <li>
+            @ViewBag.idealHouse.StreetName;
+        </li>
+    } else {
+        <li> No items to show</li>
+    }
+}
+
+
